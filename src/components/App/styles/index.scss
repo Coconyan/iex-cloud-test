@@ -1,0 +1,29 @@
+@import "reset";
+@import "variables/global";
+@import "themes/light";
+@import "themes/dark";
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--bg-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-l);
+  color: var(--primary-color);
+}
+
+// todo delete and add Link component
+a {
+  color: var(--inverted-primary-color);
+}
