@@ -3,7 +3,7 @@ import './styles/index.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { fetchCompanies } from '../../store/api-actions';
 import { getCompanies } from '../../store/data/selectors';
-import StocksList from '../StocksList/StocksList';
+import StockList from '../stocks-list/stock-list';
 // import { Link } from 'react-router-dom';
 
 function App() {
@@ -16,20 +16,18 @@ function App() {
     console.log('dispatch');
   },[]);
 
-  console.log(stocks)
+  // console.log(stocks)
 
   return (
     <div className="App dark">
       <header className="App-header">
         Test iex cloud app
       </header>
-      <StocksList 
+      <StockList 
         stocks={stocks}
         activePage={activePage}
         setActivePage={setActivePage}
       />
-      
-      {/* <main>{companies.companyName}</main> */}
       <footer className="App-footer">
         <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
       </footer>
