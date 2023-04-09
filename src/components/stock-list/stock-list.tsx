@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../pagination/pagination';
 import './stock-list.scss';
-import StockItem from '../stocks-item/stock-item';
+import StockItem from '../stock-item/stock-item';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { fetchCompanies } from '../../store/api-actions';
 import { getCompanies } from '../../store/data/selectors';

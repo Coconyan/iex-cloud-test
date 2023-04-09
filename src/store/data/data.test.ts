@@ -1,5 +1,6 @@
+import { mockStockItem } from '../../mocks/mock-stock-item';
 import {
-  data,
+  data, loadStocks,
 } from './data';
 
 const state = {
@@ -11,6 +12,13 @@ describe('Reducer: data', () => {
     expect(data.reducer(void 0, {type: 'UNKNOWN_ACTION'}))
       .toEqual({
         stocks: [],
+      });
+  });
+
+  it('should update offers by load stock', () => {
+    expect(data.reducer(state, loadStocks([mockStockItem, mockStockItem])))
+      .toEqual({
+        stocks: [mockStockItem, mockStockItem],
       });
   });
 });

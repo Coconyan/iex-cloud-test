@@ -1,5 +1,5 @@
 import React from 'react';
-import StockList from '../../components/stocks-list/stock-list';
+import StockList from '../../components/stock-list/stock-list';
 
 function MainPage() {
   return (

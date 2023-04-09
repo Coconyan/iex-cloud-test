@@ -15,7 +15,7 @@ function StockItem({ index, stock }: PropsType): JSX.Element {
       <td>{stock.low}</td>
       <td>{stock.high}</td>
       <td>{stock.volume}</td>
-      <td className={stock.changePercent > 0 ? 'green' : 'red'}>{`${stock.changePercent} %`}</td>
+      <td data-testid="percent" className={stock.changePercent > 0 ? 'green' : 'red'}>{`${stock.changePercent} %`}</td>
     </tr>
   );
 }
