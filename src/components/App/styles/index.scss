@@ -15,7 +15,14 @@
   color: var(--primary-color);
 }
 
-// todo delete and add Link component
 a {
   color: var(--inverted-primary-color);
+}
+
+.theme-button {
+  border: none;
+  background: var(--primary-color);
+  color: var(--inverted-primary-color);
+  padding: 5px;
+  border-radius: 2px;
 }
