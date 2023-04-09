@@ -12,10 +12,8 @@ export const fetchCompanies = createAsyncThunk<void, undefined, {
   'data/fetchOffers',
   async (_arg, {dispatch, extra: api}) => {
     try {
-      // const {data} = await api.get<any>(APIRoute.Appl);
-      const {data} = await api.get<any>('/stock/market/previous/');
+      const {data} = await api.get<any>(APIRoute.StockMarketPrevious);
       dispatch(loadStocks(data));
-      console.log('fetch');
     } catch (error) {
       console.log(error);
     }

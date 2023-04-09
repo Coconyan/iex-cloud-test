@@ -3,12 +3,14 @@ import { LastDayPrice } from '../../types/last-day-price';
 import './stock-item.scss';
 
 type PropsType = {
-  stock: LastDayPrice;
+  index: number,
+  stock: LastDayPrice,
 }
 
-function StockItem({ stock }: PropsType): JSX.Element {
+function StockItem({ index, stock }: PropsType): JSX.Element {
   return (
     <tr>
+      <td>{index}</td>
       <td>{stock.key}</td>
       <td>{stock.low}</td>
       <td>{stock.high}</td>

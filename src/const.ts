@@ -1,8 +1,9 @@
-// const MAX_COUNT = '50';
+export const PAGE_SIZE = 10;
 
 export enum APIRoute {
-  ApplNews = '/stock/TSLA/news/last/50',
-  Appl = '/stock/TSLA/book',
+  StockMarketPrevious = '/stock/market/previous/',
+  TSLANews = '/stock/TSLA/news/last/50',
+  TSLA = '/stock/TSLA/book',
 }
 
 export enum NameSpace {

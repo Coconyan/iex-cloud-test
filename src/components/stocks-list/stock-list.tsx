@@ -1,21 +1,28 @@
-import React from 'react';
-import { LastDayPrice } from '../../types/last-day-price';
+import React, { useEffect, useState } from 'react';
 import Pagination from '../pagination/pagination';
 import './stock-list.scss';
 import StockItem from '../stocks-item/stock-item';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { fetchCompanies } from '../../store/api-actions';
+import { getCompanies } from '../../store/data/selectors';
+import { PAGE_SIZE } from '../../const';
 
-type PropsType = {
-  stocks: LastDayPrice[];
-  activePage: number;
-  setActivePage: React.Dispatch<React.SetStateAction<number>>;
-}
+function StockList(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const stocks = useAppSelector(getCompanies);
+  const [activePage, setActivePage] = useState(1);
 
-function StockList({ stocks, activePage, setActivePage }: PropsType): JSX.Element {
+  useEffect(() => {
+    dispatch(fetchCompanies());
+    console.log('dispatch');
+  },[]);
+
   return (
-    <div>
+    <div className="content-wrapper">
       <table className='table'>
         <thead>
           <tr>
+            <th>№</th>
             <th>KEY</th>
             <th>LOW</th>
             <th>HIGH</th>
@@ -25,15 +32,15 @@ function StockList({ stocks, activePage, setActivePage }: PropsType): JSX.Elemen
         </thead>
         <tbody>
           {stocks
-            .slice((activePage - 1) * 10, activePage * 10)
-            .map((stock) => <StockItem stock={stock}/>)
+            .slice((activePage - 1) * PAGE_SIZE, activePage * PAGE_SIZE)
+            .map((stock, id) => <StockItem index={((activePage - 1) * PAGE_SIZE) + id + 1} stock={stock}/>)
           }
         </tbody>
       </table>
       <Pagination
         onPageChange={setActivePage}
         currentPage={activePage}
-        pageSize={10}
+        pageSize={PAGE_SIZE}
         totalCount={stocks.length}
         className='pagination'
       />
