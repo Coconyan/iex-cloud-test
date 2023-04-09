@@ -49,4 +49,3 @@ function StockList(): JSX.Element {
 }
 
 export default StockList;
-

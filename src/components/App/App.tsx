@@ -1,17 +1,15 @@
 import React from 'react';
 import './styles/index.scss';
-import StockList from '../stocks-list/stock-list';
+import AppRouter from './router/app-router';
+import Footer from '../footer/footer';
+import Header from '../header/header';
 
 function App() {
   return (
     <div className="App dark">
-      <header className="App-header">
-        Test iex cloud app
-      </header>
-      <StockList />
-      <footer className="App-footer">
-        <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
-      </footer>
+      <Header />
+      <AppRouter />
+      <Footer />
     </div>
   );
 }
