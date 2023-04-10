@@ -1,15 +1,22 @@
 import React from 'react';
 import { LastDayPrice } from '../../types/last-day-price';
 import cls from './stock-item.module.scss';
+import { DraggableProvided } from 'react-beautiful-dnd';
 
 type PropsType = {
   index: number,
   stock: LastDayPrice,
+  provided: DraggableProvided,
 }
 
-function StockItem({ index, stock }: PropsType): JSX.Element {
+function StockItemDnd({ index, stock, provided }: PropsType): JSX.Element {
   return (
-    <tr>
+    <tr
+      className='test-flex'
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+    >
       <td>{index}</td>
       <td>{stock.symbol}</td>
       <td>{stock.low}</td>
@@ -20,5 +27,5 @@ function StockItem({ index, stock }: PropsType): JSX.Element {
   );
 }
 
-export default StockItem;
+export default StockItemDnd;
 

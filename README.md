@@ -1,3 +1,8 @@
+# Before start
+
+Please make sure you have iex cloud API Token 
+You shoul put this token into the '.env' file in the root of project close to package.json, tsconfig.json etc.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

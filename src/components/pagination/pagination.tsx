@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import { usePagination, DOTS } from './usePagination';
+import {
+  usePagination,
+  DOTS
+} from './usePagination';
 import './pagination.scss';
 
 type PropsType = {

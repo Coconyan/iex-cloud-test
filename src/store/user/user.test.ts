@@ -1,5 +1,7 @@
-import { mockStockItem } from '../../mocks/mock-stock-item';
-import { setTheme, user } from './user';
+import {
+  setTheme,
+  user
+} from './user';
 
 const state = {
   themeIsDark: true,

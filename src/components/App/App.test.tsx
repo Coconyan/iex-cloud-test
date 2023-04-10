@@ -1,4 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import {
+  render,
+  screen
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import {

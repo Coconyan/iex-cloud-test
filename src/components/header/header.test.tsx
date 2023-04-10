@@ -5,9 +5,6 @@ import {
 import Header from './header';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { Provider } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
-import NotFoundPage from '../../pages/not-found-page/not-found-page';
-import { RoutePath } from '../app/router/route-config';
 
 const mockStore = configureMockStore();
 
