@@ -4,6 +4,7 @@ import { Data } from '../../types/state';
 
 const initialState: Data = {
   stocks: [],
+  isLoading: false,
 };
 
 export const data = createSlice({
@@ -13,7 +14,10 @@ export const data = createSlice({
     loadStocks: (state, action) => {
       state.stocks = action.payload;
     },
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { loadStocks } = data.actions;
+export const { loadStocks, setLoading } = data.actions;

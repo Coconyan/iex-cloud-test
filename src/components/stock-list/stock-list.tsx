@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Pagination from '../pagination/pagination';
 import './stock-list.scss';
 import StockItem from '../stock-item/stock-item';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { fetchCompanies } from '../../store/api-actions';
-import { getCompanies } from '../../store/data/selectors';
+import { useAppSelector } from '../../hooks';
+import { getCompanies, getIsLoading } from '../../store/data/selectors';
 import { PAGE_SIZE } from '../../const';
+import StockListSkeletonLoader from '../stock-list-skeleton-loader/stock-list-skeleton-loader';
 
 function StockList(): JSX.Element {
-  const dispatch = useAppDispatch();
   const stocks = useAppSelector(getCompanies);
+  const isLoading = useAppSelector(getIsLoading)
   const [activePage, setActivePage] = useState(1);
 
-  useEffect(() => {
-    dispatch(fetchCompanies());
-    console.log('dispatch');
-  },[]);
+  if (isLoading) {
+    return <StockListSkeletonLoader />
+  }
 
   return (
     <div className="content-wrapper">

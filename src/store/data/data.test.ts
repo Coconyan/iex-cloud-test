@@ -5,6 +5,7 @@ import {
 
 const state = {
   stocks: [],
+  isLoading: false,
 };
 
 describe('Reducer: data', () => {
@@ -12,6 +13,7 @@ describe('Reducer: data', () => {
     expect(data.reducer(void 0, {type: 'UNKNOWN_ACTION'}))
       .toEqual({
         stocks: [],
+        isLoading: false,
       });
   });
 
@@ -19,6 +21,7 @@ describe('Reducer: data', () => {
     expect(data.reducer(state, loadStocks([mockStockItem, mockStockItem])))
       .toEqual({
         stocks: [mockStockItem, mockStockItem],
+        isLoading: false,
       });
   });
 });

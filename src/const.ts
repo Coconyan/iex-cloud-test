@@ -8,4 +8,5 @@ export enum APIRoute {
 
 export enum NameSpace {
   data = 'DATA',
+  user = 'USER',
 }

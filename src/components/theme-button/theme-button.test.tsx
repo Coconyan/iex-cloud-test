@@ -2,12 +2,9 @@ import {
   render,
   screen
 } from '@testing-library/react';
-import Header from './header';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { Provider } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
-import NotFoundPage from '../../pages/not-found-page/not-found-page';
-import { RoutePath } from '../app/router/route-config';
+import ThemeButton from './theme-button';
 
 const mockStore = configureMockStore();
 
@@ -18,14 +15,14 @@ const store = mockStore({
 });
 
 
-describe('Component: Header', () => {
+describe('Component: ThemeButton', () => {
   it('should render correctly', () => {
 
     render(
     <Provider store={store}>
-      <Header />
+      <ThemeButton />
     </Provider>);
 
-    expect(screen.getByText(/Test iex cloud app/i)).toBeInTheDocument();
+    expect(screen.getByText(/dark theme/i)).toBeInTheDocument();
   });
 });
